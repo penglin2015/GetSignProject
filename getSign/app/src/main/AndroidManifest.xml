@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/FullscreenActionBarStyle"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".SeeSystemAppInfoActivity"></activity>
         <activity
             android:name=".FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

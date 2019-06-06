@@ -4,10 +4,15 @@ import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -15,6 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.penglin.myapplication.util.AppSigning;
+
+import java.util.List;
 
 public class FullscreenActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -28,7 +35,7 @@ public class FullscreenActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_fullscreen);
         findViewById(R.id.copeSignButton).setOnClickListener(this);
         findViewById(R.id.getSignButton).setOnClickListener(this);
-
+        findViewById(R.id.seeAllAppButton).setOnClickListener(this);
         inputPackageNameEt = findViewById(R.id.inputPackageNameEt);
 
         liveSignTv = findViewById(R.id.liveSignTv);
@@ -59,7 +66,14 @@ public class FullscreenActivity extends AppCompatActivity implements View.OnClic
             case R.id.copeSignButton:
                 copySignStr();
                 break;
+            case R.id.seeAllAppButton:
+                jumpToAllAppInfo();
+                break;
         }
+    }
+
+    private void jumpToAllAppInfo() {
+        startActivity(new Intent(this,SeeSystemAppInfoActivity.class));
     }
 
     //赋值

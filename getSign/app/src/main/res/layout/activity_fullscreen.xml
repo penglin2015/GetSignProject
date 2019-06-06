@@ -9,6 +9,20 @@
     tools:context=".FullscreenActivity">
 
 
+    <Button
+        android:id="@+id/seeAllAppButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="66dp"
+        android:text="查看所有app"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/copeSignButton" />
+
     <EditText
         android:id="@+id/inputPackageNameEt"
         android:layout_width="0dp"
